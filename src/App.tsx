@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AdvancedCharts from "./pages/AdvancedCharts";
+import Alerts from "./pages/Alerts";
+import PortfolioAnalysis from "./pages/PortfolioAnalysis";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/advanced-charts" element={<AdvancedCharts />} />
+          <Route path="/alerts" element={<Alerts />} />
+          <Route path="/portfolio-analysis" element={<PortfolioAnalysis />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

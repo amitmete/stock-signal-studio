@@ -7,6 +7,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { Button } from "@/components/ui/button";
 import { BarChart3, Bell, Wallet, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-dashboard.jpg";
+import { Link } from "react-router-dom";
 
 interface Stock {
   symbol: string;
@@ -183,17 +184,23 @@ const Index = () => {
 
         {/* Bottom Actions */}
         <div className="flex justify-center gap-4 mt-12">
-          <Button variant="outline" size="lg">
-            <BarChart3 className="w-5 h-5 mr-2" />
-            Advanced Charts
+          <Button asChild variant="outline" size="lg">
+            <Link to="/advanced-charts">
+              <BarChart3 className="w-5 h-5 mr-2" />
+              Advanced Charts
+            </Link>
           </Button>
-          <Button variant="outline" size="lg">
-            <Bell className="w-5 h-5 mr-2" />
-            Manage Alerts
+          <Button asChild variant="outline" size="lg">
+            <Link to="/alerts">
+              <Bell className="w-5 h-5 mr-2" />
+              Manage Alerts
+            </Link>
           </Button>
-          <Button variant="outline" size="lg">
-            <Wallet className="w-5 h-5 mr-2" />
-            Portfolio Analysis
+          <Button asChild variant="outline" size="lg">
+            <Link to="/portfolio-analysis">
+              <Wallet className="w-5 h-5 mr-2" />
+              Portfolio Analysis
+            </Link>
           </Button>
         </div>
       </div>

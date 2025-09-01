@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Bell, Plus, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { formatINR } from "@/lib/currency";
 
 interface Alert {
   id: string;
@@ -108,7 +109,7 @@ export const AlertPanel = () => {
               <div>
                 <span className="font-medium text-foreground">{alert.symbol}</span>
                 <span className="text-muted-foreground ml-2">
-                  {alert.type} ${alert.price.toFixed(2)}
+                  {alert.type} {formatINR(alert.price)}
                 </span>
               </div>
             </div>

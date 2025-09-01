@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { formatINR } from "@/lib/currency";
 
 interface ChartDataPoint {
   time: string;
@@ -18,7 +19,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
       <div className="bg-card border border-border rounded-lg p-3 shadow-lg">
         <p className="text-foreground font-medium">{label}</p>
         <p className="text-primary">
-          Price: ${payload[0].value.toFixed(2)}
+          Price: {formatINR(payload[0].value)}
         </p>
       </div>
     );
@@ -46,7 +47,7 @@ export const StockChart = ({ symbol, data, isPositive = true }: StockChartProps)
             <YAxis 
               stroke="hsl(var(--muted-foreground))"
               fontSize={12}
-              tickFormatter={(value) => `$${value}`}
+              tickFormatter={(value) => formatINR(value)}
             />
             <Tooltip content={<CustomTooltip />} />
             <Line

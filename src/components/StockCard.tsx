@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { formatINR } from "@/lib/currency";
 
 interface StockCardProps {
   symbol: string;
@@ -31,7 +32,7 @@ export const StockCard = ({ symbol, name, price, change, changePercent, volume }
       
       <div className="space-y-2">
         <div className="text-3xl font-bold text-foreground">
-          ${price.toFixed(2)}
+          {formatINR(price)}
         </div>
         
         <div className="flex items-center gap-2">

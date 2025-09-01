@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Wallet, TrendingUp, DollarSign, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { formatINR } from "@/lib/currency";
 
 interface PortfolioPosition {
   symbol: string;
@@ -40,7 +41,7 @@ export const Portfolio = () => {
             <span className="text-sm text-muted-foreground">Total Value</span>
           </div>
           <div className="text-2xl font-bold text-foreground">
-            ${totalValue.toFixed(2)}
+            {formatINR(totalValue)}
           </div>
         </div>
 
@@ -53,7 +54,7 @@ export const Portfolio = () => {
             "text-2xl font-bold",
             isPositive ? "text-success" : "text-destructive"
           )}>
-            {isPositive ? "+" : ""}${totalGainLoss.toFixed(2)}
+            {isPositive ? "+" : "-"}{formatINR(Math.abs(totalGainLoss))}
           </div>
           <div className={cn(
             "text-sm font-medium",
@@ -90,18 +91,18 @@ export const Portfolio = () => {
                 <div>
                   <div className="font-semibold text-foreground">{position.symbol}</div>
                   <div className="text-sm text-muted-foreground">
-                    {position.shares} shares @ ${position.avgPrice.toFixed(2)}
+                    {position.shares} shares @ {formatINR(position.avgPrice)}
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="font-semibold text-foreground">
-                    ${currentValue.toFixed(2)}
+                    {formatINR(currentValue)}
                   </div>
                   <div className={cn(
                     "text-sm font-medium",
                     isPositivePosition ? "text-success" : "text-destructive"
                   )}>
-                    {isPositivePosition ? "+" : ""}${gainLoss.toFixed(2)} ({isPositivePosition ? "+" : ""}{gainLossPercent.toFixed(1)}%)
+                    {isPositivePosition ? "+" : "-"}{formatINR(Math.abs(gainLoss))} ({isPositivePosition ? "+" : ""}{gainLossPercent.toFixed(1)}%)
                   </div>
                 </div>
               </div>
