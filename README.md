@@ -1,73 +1,102 @@
-# Welcome to your Lovable project
+📈 Stock Signal Studio
 
-## Project info
+Stock Signal Studio is a React + TypeScript web app for exploring stock trading signals. It provides an interactive interface to analyze real-time signals, visualize indicators, and track market movements with a clean, modern UI.
 
-**URL**: https://lovable.dev/projects/5a7b01ea-3bd4-4e36-b230-5aa7cf9a50ca
+🚀 Features
 
-## How can I edit this code?
+🔎 Real-time stock signals (buy/sell indicators)
 
-There are several ways of editing your application.
+📊 Interactive charts & visualizations
 
-**Use Lovable**
+🎨 Modern UI powered by TailwindCSS + shadcn/ui
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5a7b01ea-3bd4-4e36-b230-5aa7cf9a50ca) and start prompting.
+⚡ Blazing fast development with Vite + React + TypeScript
 
-Changes made via Lovable will be committed automatically to this repo.
+🧩 Modular, component-based architecture for easy extension
 
-**Use your preferred IDE**
+🛠 Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Frontend: React, TypeScript, Vite
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Styling: Tailwind CSS, shadcn/ui
 
-Follow these steps:
+Charts & Data: (Add exact library you’re using, e.g. Recharts / Chart.js / d3)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Other: ESLint + Prettier for linting/formatting
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+📂 Project Structure
+stock-signal-studio/
+├── public/             # Static assets
+├── src/
+│   ├── components/     # Reusable UI components (charts, forms, buttons, etc.)
+│   ├── pages/          # App pages / routes
+│   ├── utils/          # Utility functions (calculations, API helpers)
+│   ├── hooks/          # Custom React hooks
+│   ├── App.tsx         # Main app entry
+│   └── main.tsx        # Vite + React bootstrap
+├── package.json        # Dependencies & scripts
+├── tsconfig.json       # TypeScript configuration
+└── README.md           # Project documentation
 
-# Step 3: Install the necessary dependencies.
-npm i
+⚡ Getting Started
+1. Clone the repo
+git clone https://github.com/amitmete/stock-signal-studio.git
+cd stock-signal-studio
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Install dependencies
+npm install
+
+3. Run locally
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+App will be available at http://localhost:5173
+.
 
-**Use GitHub Codespaces**
+4. Build for production
+npm run build
+npm run preview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📖 Usage
 
-## What technologies are used for this project?
+Search for a stock ticker (e.g., AAPL, TSLA)
 
-This project is built with:
+Select timeframe (1D, 1H, 15M)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+View generated signals and charts
 
-## How can I deploy this project?
+Analyze trends and make informed trading decisions
 
-Simply open [Lovable](https://lovable.dev/projects/5a7b01ea-3bd4-4e36-b230-5aa7cf9a50ca) and click on Share -> Publish.
+🤝 Contributing
 
-## Can I connect a custom domain to my Lovable project?
+Contributions are welcome!
 
-Yes, you can!
+Fork the repo
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Create a new branch: git checkout -b feature-name
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Make your changes
+
+Commit: git commit -m "Added new feature"
+
+Push: git push origin feature-name
+
+Open a Pull Request
+
+Please follow the existing code style (TypeScript + ESLint + Prettier).
+
+📸 Screenshots (Optional)
+
+(Add a screenshot or GIF of the app here to showcase the UI.)
+
+📜 License
+
+This project is licensed under the MIT License – feel free to use it for personal or commercial purposes.
+
+📬 Contact
+
+Author: Amit Mete
+
+GitHub: @amitmete
+
+Issues: Open an issue
